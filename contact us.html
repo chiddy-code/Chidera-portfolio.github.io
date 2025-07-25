@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+* {
+    transition: 0.75s;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+        .contact-form-legend {
+    padding: 2pc;
+    margin: 2pc;
+    border-radius: 0.5pc;
+        }
+
+        .contact-form-legend > form > input {
+            padding: 0.5pc;
+    margin: 0.5pc;
+    border-radius: 0.5pc;
+    width: -webkit-fill-available;
+        }
+
+.contact-form-legend > form > div > button {
+    border-radius: 0.5pc;
+    font-size: 4vw;
+    padding: 0.5pc;
+}
+
+        .header {
+            text-align: center;
+    font-size: 10vw;
+    padding: 2pc;
+        }
+
+     .contact-heading {
+        font-size: 2.5pc;
+        text-align: center;
+     }   
+
+.contact-card {
+    position: relative;
+    opacity: 0;
+    right: 100vw;
+}
+
+.contact-card > .info{
+border: 1px solid;
+padding: 1pc;
+}
+
+    </style>
+
+</head>
+<body onscroll="setTimeout(appear, 1000)">
+    <script src="main.js"></script>
+<p>
+    If you want to send a feedback or message, I'll do well to respond under 24hrs
+    and ensure your feedbacks are cordially assessed and responded to.
+</p>
+    <div class="contact-form-legend main-ui-theme-borders main-ui-shadow">
+        <form>
+            <div on class="header">Send Feedback</div>
+            <input type="text" placeholder="Insert Name">
+            <input type="email" placeholder="Insert E-mail">
+            <input style="height: 8pc;" type="text" placeholder="Type message here...">
+            <div style="text-align: center; padding: 2pc;"><button class="main-ui-theme">Send Message</button></div>
+        </form>
+    </div>
+
+<div class="contact-card main-ui-theme-borders main-ui-shadows">
+<div class="contact-heading main-ui-theme">
+    Contact Us
+</div>
+<div class="info"><b>Phone☎</b><br> +2347012345678, 447-CHIDERA</div>
+<div class="info"><b>Email📧</b><br> chiderachurchillprince@email.com</div>
+<div class="info"><b>Address</b><br> <i>University of Abuja, Gwagalada, Abuja, FCT, Nigeria.</i></div>
+</div>
+    <script>
+        function appear() {
+        let a = document.querySelectorAll(".contact-card")
+        a.forEach(e => { e.style.opacity = 1;
+            e.style.right = "0";
+        }) 
+    }
+    </script>
+</body>
+</html>

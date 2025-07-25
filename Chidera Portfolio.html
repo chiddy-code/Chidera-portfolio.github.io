@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+*, ::before, ::after
+{
+    transition: 0.75s;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+   /* background-color: lightcyan;*/
+    margin: 0;
+}
+
+table {
+    background-color: white;
+    border-radius: 0.5pc;
+}
+
+@font-face {
+    src: url('C:/Users/Naija Student/3D Objects/My fonts/13_Misa.ttf');
+    font-family: Techtext;
+ }
+
+.main-screen {
+    display: flex;
+    flex-direction: column;
+    height: 12vh;
+}
+
+.menu:active {
+    opacity: 0.75;
+}
+
+.page-menu {
+    background-image: url('C:/Users/Naija Student/3D Objects/pro wor/rect1.png');
+    background-clip: border-box;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.75s;
+    overflow-x: hidden;
+}
+
+.page-menu > div > li {
+    list-style-type: none;
+    display: block;
+    font-size: 1.5pc;
+    padding: 1pc;
+    text-decoration: none;
+}
+
+.page-menu > div > li > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.page-menu > div > li:active {
+opacity: 0.75;
+transition: 0.1s;
+box-shadow: inset white 0px 0px 6px 7px;
+fill-opacity: 0.5;
+}
+
+.page-menu > .content {
+height: 100%;
+opacity: 75%;
+}
+
+.page-menu > div > li.close-btn {
+    text-align: right;
+    position: relative;
+    float: right;
+    margin-left: 100%;
+    background-color: green;
+}
+
+.top-bar {
+display: flex;
+align-items: stretch;
+}
+
+.top-bar > span {
+font-size: 3pc;
+    width: 20%;
+    text-align: center;
+}
+
+.top-bar > div {
+flex: 1 1 0%;
+    text-align: center;
+    padding: 1pc;
+    font-size: 2pc;
+}
+
+h2, h4, h5, h6 {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+} 
+
+.Bio-card {
+    margin: 1pc;
+    padding: 1vw;
+    border-radius: 0.5pc;
+}
+
+.main-bio-id {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    border-radius: 0.5pc;
+}
+
+.bio-id-icon {
+    border-radius: 0.25pc 0.25pc 0 0;
+    text-align: center;
+}
+
+.bio-id-name {
+border-radius: 0 0 0.25pc 0.25pc;
+    flex: 1;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 5vw;
+}
+
+.identifier{
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="page-menu main-ui-theme" style="width: 0%;">
+<div class="content">
+<li class="close-btn secondary-ui-theme" onclick="close_menu()">X<li>
+<br>
+<li onclick="document.querySelector('.hero').innerText = this.innerText;
+document.querySelector('.display-hub').setAttribute('hidden','');
+document.querySelector('.main-page').removeAttribute('hidden');
+document.querySelector('.main-screen').style.height = '12vh';">Homepage</li>
+
+<li><a href="Timeline.html" target="net-screen" onclick="document.querySelector('.hero').innerText = this.innerText;
+document.querySelector('.display-hub').removeAttribute('hidden');
+document.querySelector('.main-page').setAttribute('hidden','');
+document.querySelector('.main-screen').style.height = '100vh';">Timeline</a></li>
+
+<li><a href="contact us.html" target="net-screen" onclick="document.querySelector('.hero').innerText = this.innerText;
+document.querySelector('.display-hub').removeAttribute('hidden');
+document.querySelector('.main-page').setAttribute('hidden','');
+document.querySelector('.main-screen').style.height = '100vh';">Contact Us</a></li>
+
+</div></div>
+</div>
+<div class="main-screen">
+   <div class="top-bar"><span class="menu secondary-ui-theme" onclick="open_menu()">&equiv;</span><div class="main-ui-theme hero" style="margin-bottom: 0;">Timeline</div></div>
+<div class="display-hub" style="flex: 1;" hidden>
+    <iframe src="" id="net-screen" name="net-screen" style="width: -webkit-fill-available; height: -webkit-fill-available; border: none;">
+    </iframe>
+</div>
+</div>
+   <div class="main-page">
+   <div class="Bio-card main-ui-theme-borders">
+    <div class="main-bio-id main-ui-theme-borders">
+        <div class="bio-id-icon secondary-ui-theme"><img style="border-radius: 50%; margin: 2vw;" src="me.png" width="200" height="200"></div>
+        <div class="bio-id-name main-ui-theme">Chidera Prince Churchill</div>
+    </div>
+    <div class="bio-desc" style="margin: 1vw;">
+        Hi, My name is Chidera Prince Churchill. I'm a student in Yakubu Gowon University (Formerly, University of Abuja).<br>
+        I am an expert in HTML & CSS and Javascript. I am currently trying to learn frameworks like Vue.js, React.js, Node.js, etc.<br>
+        I specialize in timely animations, webpage structuring, basic API integration, DOM manipulations and Javascript interactivity with webpage elements.<br>
+        I however, lack color mastery and I'm improving my skill by learning how to balance and mix colors to make attractive color themes.<br>
+    </div>
+</div>
+
+
+<table>   
+    <tr>
+        <td class="identifier">Name</td>
+        <td>Chidera Prince Churchill</td>
+    </tr>
+    <tr>
+        <td class="identifier">Age</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td class="identifier">Education Level</td>
+        <td>Tertiary</td>
+    </tr>
+    <tr>
+        <td class="identifier">Name of Institution</td>
+        <td>Yakubu Gowon University (UNIABUJA)</td>
+    </tr>
+    <tr>
+        <td class="identifier">Level</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td class="identifier">Origin State</td>
+        <td>Abia State</td>
+    </tr>
+    <tr>
+        <td class="identifier">Skill</td>
+        <td>Basic Web Programming</td>
+    </tr>
+</table>
+</div>
+
+<script>
+    function secondary_theme() {
+    let secondaryTheme = document.querySelectorAll(".secondary-ui-theme")
+
+        for (let i = 0; i < secondaryTheme.length; i++) {
+            j = i - 1
+            j++
+            let repeat = secondaryTheme[j];
+    let clock = new Date()
+    let h = clock.getHours()
+    if (h >= 0 && h < 6  ){
+        repeat.style.backgroundImage = "linear-gradient(40deg, black, darkblue)"
+    repeat.style.color = "wheat"
+    } else if (h >= 6 && h < 8) {
+        repeat.style.backgroundImage = "linear-gradient(45deg, orange, blue)"
+    repeat.style.color = "white"
+    } else if(h >= 8 && h < 12) {
+        repeat.style.backgroundImage = "linear-gradient(135deg, yellow, #00affd, skyblue)"
+    repeat.style.color = "black"
+    } else if (h >= 12 && h < 16) {
+        repeat.style.backgroundImage = "linear-gradient(195deg, orange, #FF9800, yellow)"
+    repeat.style.color = "darkred"
+    } else if ( h >= 16 && h < 20){
+        repeat.style.backgroundImage = "linear-gradient(360deg, #a77f06, #6f4e1dab, #184d65)"
+    repeat.style.color = "black"
+    } else if (h >= 20 && h < 24) {
+        repeat.style.backgroundImage = "linear-gradient(145deg, #16164d, #01011c, #000000)"
+    repeat.style.color = "wheat"
+    }
+}
+
+}
+secondary_theme()
+setInterval(secondary_theme, 1)
+
+function primaryTheme() {
+let mainTheme = document.querySelectorAll(".main-ui-theme")
+let mainThemeBorders = document.querySelectorAll(".main-ui-theme-borders")
+let tables = document.querySelectorAll("table, tr, td")
+let bio_card = document.querySelector(".Bio-card")
+let menu = document.querySelector(".page-menu > .content")
+let closeBtn = document.querySelector(".close-btn")
+
+
+for (let j = 0; j < mainTheme.length; j++) {
+    k = j - 1
+    k++
+    let repeat = mainTheme[k]
+    let repeat2 = mainThemeBorders
+let clock = new Date()
+    let h = clock.getHours()
+    if (h >= 0 && h < 6  ){
+        repeat.style.backgroundColor = "#1b2165"
+        repeat.style.color = "wheat"
+    } else if (h >= 6 && h < 8) {
+        repeat.style.backgroundColor = "#0a1993"
+        repeat.style.color = "white"
+    } else if(h >= 8 && h < 12) {
+        repeat.style.backgroundColor = "#9ce700"
+        repeat.style.color = "black"
+    } else if (h >= 12 && h < 16) {
+        repeat.style.backgroundColor = "#f59422"
+        repeat.style.color = "darkred"
+    } else if ( h >= 16 && h < 20){
+        repeat.style.backgroundColor = "#998a5a"
+        repeat.style.color = "black"
+    } else if (h >= 20 && h < 24) {
+        repeat.style.backgroundColor = "#1f3255"
+        repeat.style.color = "wheat"
+    }    
+
+repeat2.forEach(e => {
+    e.style.border = `1vw solid ${repeat.style.backgroundColor}`
+})
+
+tables.forEach(e => {
+    e.style.border = `1px solid ${repeat.style.backgroundColor}`
+})
+
+bio_card.style.boxShadow = `${repeat.style.backgroundColor} 0px 0px 7px 4px`
+
+menu.style.backgroundColor = `${repeat.style.backgroundColor}`
+
+}
+
+function primary_body() {
+    let zebra = document.querySelectorAll("tr:nth-child(2n)")
+    let body = document.querySelector("body")
+    let clock = new Date()
+    let h = clock.getHours()
+    if (h >= 0 && h < 6  ) {
+        body.style.backgroundColor = "#777ec7"
+    } else if (h >= 6 && h < 8) {
+        body.style.backgroundColor = "#9494fb"
+    } else if(h >= 8 && h < 12) {
+        body.style.backgroundColor = "a6f5ff"
+    } else if (h >= 12 && h < 16) {
+        body.style.backgroundColor = "#ffdcbf"
+    } else if ( h >= 16 && h < 20){
+        body.style.backgroundColor = "#efe6c8"
+    } else if (h >= 20 && h < 24) {
+        body.style.backgroundColor = "#a9e5e5"
+    }
+
+
+    zebra.forEach(e => {
+    e.style.backgroundColor = `${body.style.backgroundColor}`
+})
+
+
+
+}
+setInterval(primary_body, 1)
+
+}
+primaryTheme()
+setInterval(primaryTheme, 1)
+
+function open_menu() {
+    let menu = document.querySelector(".page-menu")
+    if ( menu.style.width == "0%"){
+         menu.style.width = "50%"
+        }
+}
+
+function close_menu() {
+    let menu = document.querySelector(".page-menu")
+    if ( menu.style.width == "50%"){
+         menu.style.width = "0%"
+        }
+}
+
+
+</script>
+</body>
+</html>
